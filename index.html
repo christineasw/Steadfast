@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steadfast Investments | Multifamily Real Estate Syndication</title>
+    <style>
+        :root {
+            --navy: #1a2942;
+            --navy-light: #2d4263;
+            --navy-dark: #0f1a2e;
+            --gold: #c9a961;
+            --gold-light: #dbbf7a;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--navy);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* Header */
+        header {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-family: 'Arial', sans-serif;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 41, 66, 0.85), rgba(26, 41, 66, 0.85)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232d4263" width="1200" height="600"/><rect fill="%231a2942" x="100" y="150" width="200" height="300"/><rect fill="%231a2942" x="350" y="100" width="180" height="350"/><rect fill="%231a2942" x="580" y="180" width="220" height="270"/><rect fill="%231a2942" x="850" y="120" width="200" height="330"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+            color: var(--off-white);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy-dark);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--gold);
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 169, 97, 0.4);
+        }
+
+        /* Pillars Section */
+        .pillars {
+            background: var(--off-white);
+            padding: 5rem 2rem;
+        }
+
+        .pillars-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .pillar:hover {
+            transform: translateY(-5px);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .pillar h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .pillar p {
+            font-family: 'Arial', sans-serif;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .content-section.alt {
+            background: var(--off-white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .content-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .content-box h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-box ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .content-box li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: 'Arial', sans-serif;
+            color: var(--gray);
+        }
+
+        .content-box li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--navy);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-family: 'Arial', sans-serif;
+            font-size: 1rem;
+            color: var(--off-white);
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--off-white);
+            padding: 5rem 2rem;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-family: 'Arial', sans-serif;
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid var(--gray-light);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-button:hover {
+            background: var(--navy-light);
+        }
+
+        .compliance-note {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--off-white);
+            border-left: 3px solid var(--gold);
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--navy-light);
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy-dark);
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">STEADFAST INVESTMENTS</div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#strategy">Investment Strategy</a></li>
+                    <li><a href="#why-multifamily">Why Multifamily</a></li>
+                    <li><a href="#investor-relations">Investor Relations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Invest with Confidence in U.S. Multifamily Real Estate</h1>
+        <p>Steadfast Investments partners with accredited investors to create long-term wealth through disciplined acquisition and management of multifamily and select commercial properties across the United States.</p>
+        <a href="#investor-relations" class="cta-button">Request More Information</a>
+    </section>
+
+    <!-- Company Pillars -->
+    <section class="pillars">
+        <div class="pillars-grid">
+            <div class="pillar">
+                <div class="pillar-icon">⚖</div>
+                <h3>Integrity</h3>
+                <p>We operate with transparency and honesty in every partnership and transaction.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">🏛</div>
+                <h3>Stability</h3>
+                <p>Conservative underwriting and strategic asset selection ensure consistent performance.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">📈</div>
+                <h3>Performance</h3>
+                <p>Proven track record of delivering stable income and capital appreciation.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-icon">🤝</div>
+                <h3>Partnership</h3>
+                <p>Long-term relationships built on alignment, communication, and mutual success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="content-section">
+        <h2 class="section-title">About Steadfast Investments</h2>
+        <p class="section-subtitle">Building wealth through disciplined real estate investment and unwavering commitment to investor success.</p>
+        
+        <div class="content-box">
+            <h3>Our Mission</h3>
+            <p>At Steadfast Investments, we are dedicated to creating exceptional value for our accredited investor partners through strategic acquisition and active management of multifamily and select mixed-use commercial properties. Our approach combines conservative underwriting, hands-on asset management, and transparent communication to deliver stable income and long-term capital appreciation.</p>
+        </div>
+
+        <div class="two-column" style="margin-top: 3rem;">
+            <div class="content-box">
+                <h3>Our Values</h3>
+                <ul>
+                    <li>Transparency in all communications and reporting</li>
+                    <li>Investor alignment through shared interests</li>
+                    <li>Long-term relationship building</li>
+                    <li>Conservative underwriting standards</li>
+                    <li>Professional asset management</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <h3>Our Expertise</h3>
+                <ul>
+                    <li>Decades of combined real estate experience</li>
+                    <li>Deep market knowledge across 48 states</li>
+                    <li>Value-add operational improvements</li>
+                    <li>Institutional-quality property management</li>
+                    <li>Strategic capital deployment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Strategy -->
+    <section id="strategy" class="content-section alt">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Investment Strategy</h2>
+            <p class="section-subtitle">Disciplined acquisition of value-add multifamily properties in growth markets.</p>
+            
+            <div class="two-column">
+                <div class="content-box">
+                    <h3>Asset Focus</h3>
+                    <p>We target Class B and C multifamily properties and select mixed-use opportunities that offer strong fundamentals and upside potential through operational improvements.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>4-100 unit apartment communities</li>
+                        <li>Value-add opportunities</li>
+                        <li>Strong demographic trends</li>
+                        <li>Below-market rents</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Selection Criteria</h3>
+                    <p>Every investment undergoes rigorous analysis to ensure alignment with our conservative underwriting standards.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>Underperforming assets with upside</li>
+                        <li>Growth markets with job expansion</li>
+                        <li>Steady rental demand fundamentals</li>
+                        <li>Strong cash-on-cash returns</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-box" style="margin-top: 3rem;">
+                <h3>Active Asset Management</h3>
+                <p>Our hands-on approach includes proactive property management, strategic capital improvements, and continuous investor communication. We implement operational efficiencies, enhance property appeal, and optimize rental income to maximize returns while maintaining conservative reserves.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Multifamily -->
+    <section id="why-multifamily" class="content-section">
+        <h2 class="section-title">Why Multifamily Real Estate</h2>
+        <p class="section-subtitle">Multifamily investments offer stability, consistent cash flow, and recession resilience.</p>
+
+        <div class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>Stable</h3>
+                    <p>Consistent housing demand across economic cycles</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Resilient</h3>
+                    <p>Lower volatility compared to other asset classes</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Cash Flow</h3>
+                    <p>Monthly rental income provides steady distributions</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Appreciation</h3>
+                    <p>Property value growth through market dynamics</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width: 800px; margin: 3rem auto; text-align: center;">
+            <div class="content-box">
+                <h3>The Multifamily Advantage</h3>
+                <p>With increasing home ownership costs and evolving lifestyle preferences, multifamily rental demand continues to grow. Limited new construction in many markets creates favorable supply-demand dynamics. Multifamily properties offer diversification across multiple tenants, reducing single-occupant risk while providing predictable income streams.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Relations Form -->
+    <section id="investor-relations" class="form-section">
+        <h2 class="section-title">Investor Relations</h2>
+        
+        <div class="form-container">
+            <p class="form-intro">We partner with accredited investors seeking to diversify into private real estate opportunities. Complete the form below to learn more about current and upcoming investment offerings.</p>
+            
+            <form id="investor-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="accreditation">Are you an accredited investor? *</label>
+                    <select id="accreditation" name="accreditation" required>
+                        <option value="">Please select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="unsure">Not sure</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="investment-goals">Investment Goals and Preferences</label>
+                    <textarea id="investment-goals" name="investment-goals" placeholder="Please describe your investment objectives, preferred hold periods, target returns, or any specific requirements..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="communication">Preferred Communication Method *</label>
+                    <select id="communication" name="communication" required>
+                        <option value="">Please select</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="meeting">In-person meeting</option>
+                        <option value="video">Video call</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Request</button>
+
+                <div class="compliance-note">
+                    <strong>Important Notice:</strong> Investments are offered only to accredited investors as defined under applicable federal securities laws. All investments involve risk, including the potential loss of principal. Past performance does not guarantee future results. This is not an offer to sell securities.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section alt">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">We welcome the opportunity to discuss how Steadfast Investments can help you achieve your financial goals.</p>
+        
+        <div class="form-container">
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                    <label for="contact-name">Name *</label>
+                    <input type="text" id="contact-name" name="contact-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email">Email *</label>
+                    <input type="email" id="contact-email" name="contact-email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-phone">Phone</label>
+                    <input type="tel" id="contact-phone" name="contact-phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+
+            <div style="margin-top: 3rem; text-align: center; font-family: Arial, sans-serif; color: var(--gray);">
+                <p><strong>Steadfast Investments</strong></p>
+                <p>Email: info@steadfastinvestments.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Steadfast Investments</h4>
+                <p>Building long-term wealth through disciplined multifamily real estate investment.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#strategy">Investment Strategy</a></p>
+                <p><a href="#investor-relations">Investor Relations</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms of Use</a></p>
+                <p><a href="#">Disclosures</a></p>
+                <p><a href="#">Securities Notice</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p>info@steadfastinvestments.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Steadfast Investments. All rights reserved. Securities offered to accredited investors only.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            console.log('Investor Form Submission:', data);
+            
+            alert('Thank you for your interest! A member of our team will contact you within 24-48 hours to discuss investment opportunities.\n\nPlease note: All investments are subject to accreditation verification and suitability requirements.');
+            
+            event.target.reset();
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            console.log('Contact Form Submission:', data);
+            
+            alert('Thank you for reaching out! We will respond to your inquiry within one business day.');
+            
+            event.target.reset();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
